@@ -1,0 +1,4 @@
+#Tomcat publish data
+#Thu Feb 18 12:43:56 BDT 2021
+org.eclipse.jst.jee.server\:/binary\:E\:\\WorkSpace\\kdrl_web\\clients\\web\\web_kdrl\\WebContent\\WEB-INF\\lib\\spring-web-4.3.3.RELEASE.jar=WEB-INF/lib/spring-web-4.3.3.RELEASE.jar
+org.eclipse.jst.jee.server\:/binary\:E\:\\WorkSpace\\kdrl_web\\clients\\web\\KDRL_services\\WebContent\\WEB-INF\\lib\\spring-web-4.0.4.RELEASE.jar=WEB-INF/lib/spring-web-4.0.4.RELEASE.jar

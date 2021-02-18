@@ -1,0 +1,69 @@
+
+.login-box{
+   margin: 9% auto;
+}
+/* Extra small devices (phones, 400px and down) */
+@media only screen and (max-width: 400px) {
+  .login-box { width:280px;}
+}
+ 
+/* Extra small devices (phones, 400px and up) */
+@media only screen and (min-width: 400px) {
+  .login-box { width:300px;}
+}
+
+/* Extra small devices (phones, 500px and down) */
+@media only screen and (min-width: 500px) {
+  .login-box { width:350px;}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .login-box { width:350px;}
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .login-box { width:450px;}
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .login-box { width:450px;}
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .login-box { width:450px;}
+}
+.input-group-text{
+	width: 160px;
+	display: block;
+	text-align: right;
+}
+.domain-group-text{
+	width:70px;
+	display: block;
+	display: flex;
+	align-items: center;
+	margin-bottom: 0;
+	color: #495057;
+	text-align: center;
+	background-color: #e9ecef;
+	border: 1px solid #ced4da;
+	border-radius: .25rem;
+}
+.checkbox-check{
+ 	display: block;
+    width: 100%;
+    margin-top: .25rem;
+     margin-bottom: .25rem;
+    font-size: 80%;
+    color: #dc3545;
+ }
+ .login-logo h2{
+  color: #fd7e14 !important;
+ }
+ .modal-footer.btn{
+ 
+ }

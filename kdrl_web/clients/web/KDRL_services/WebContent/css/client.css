@@ -1,0 +1,9 @@
+.grid {
+  width: 100%;
+  height: 600px;
+  font-size: 12px;
+}
+
+.header-filtered {
+  color: blue;
+}

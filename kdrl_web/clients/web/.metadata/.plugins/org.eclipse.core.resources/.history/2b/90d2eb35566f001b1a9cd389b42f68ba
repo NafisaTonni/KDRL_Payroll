@@ -1,0 +1,159 @@
+var gridOptions;
+var memberData=null;
+
+$(document).ready(function(){
+	 buildMemberGrid();
+	loadMemberData();
+	
+	
+});
+function loadMemberData(){
+	var get_member_info = {
+			"type": "get_member_info"
+			}; 
+	new UtilWidget()
+	.http(get_member_info) 
+	.then(msg=> { 
+		console.log(msg)
+		memberData = msg.member_data;
+		gridOptions.api.setRowData(msg.member_data);
+		gridOptions.api.sizeColumnsToFit();
+		}).catch(d=>console.log(d))
+}
+function buildMemberGrid(){
+	gridOptions = {
+			onGridReady: function(params) {
+				params.api.sizeColumnsToFit();
+				window.addEventListener('resize', function() {
+	 		          setTimeout(function() {
+	 		            params.api.sizeColumnsToFit();
+	 		          })
+	 		        });
+			},
+			 defaultColDef: {
+		        sortable: true,
+		        filter: true,
+		        resizable: true,
+		    },
+		floatingFilter: true,
+	    rowSelection: 'single',
+		columnDefs : [
+	    	{
+				headerName: "ID",
+				field: "id",
+				maxWidth: 60,
+				
+			},
+			{headerName: "Full Name",field: "name"} , 
+			{headerName: "Company Name",field: "company_name"} ,
+			{headerName: "Designation",field: "designation"} ,
+			{headerName: "Official Email",field: "official_email"} ,
+			{headerName: "Phone Number",field: "phone_number"} ,
+			{
+				headerName: "",
+				field: 'edit',
+					//cellRenderer: ageCellRendererFunc,
+				template: `
+						<div  class="products-actions">
+						<a class="edit align-middle fa fa-pencil-alt action-icon" title="Edit"   style="color: var(--success);padding-bottom:3px;"
+							aria-hidden="true">
+						</a>
+						<span class="sr-only"></span>
+						</div>`,
+				maxWidth: 50,
+				filter: false,
+				sortable: false,},
+				
+			  {
+				headerName: "",
+				field: 'delete', 
+				template: `
+					<div  class="products-actions">
+					
+							<a class="remove align-middle fa fa-times action-icon" title="Delete"  style="color: var(--danger); padding-bottom:3px;"
+						aria-hidden="true">
+					</a>
+					<span class="sr-only"></span>
+					</div>`,
+				maxWidth: 50,
+				filter: false,
+ 				sortable: false,
+			  } 
+			
+		],
+		
+		onCellClicked: function(event) {
+	    	
+	    	let selectedID = event.colDef.field.trim();
+	    	let selectedData = event.data;
+	    	 
+	    	switch (selectedID) {
+	    	case "edit": 
+	    		editwData(selectedData);
+				break;
+			case "delete": 
+				deleteWData(selectedData);
+				break;
+			default:
+				break;
+			}
+	    	 
+	    },
+	 
+	};
+	 
+	
+
+	// lookup the container we want the Grid to use
+	var eGridDiv = document.querySelector('#memberListGrid');
+	$( "#memberListGrid" ).empty();
+
+	eGridDiv.childNodes[0] !== undefined
+			&& eGridDiv.removeChild(eGridDiv.childNodes[0]);
+	new agGrid.Grid(eGridDiv, gridOptions);
+	gridOptions.columnApi.getColumn("id").setSort("asc");
+	gridOptions.api.setRowData([]);
+	gridOptions.api.sizeColumnsToFit();
+}
+//update
+function editwData (data){
+	localStorage.setItem("updata", JSON.stringify(data));
+	window.location="memberUpdate.html"
+}
+//delete baad ache
+function deleteWData (data){
+	var delete_member_info = {
+			  "type": "delete_member_info",
+			  "id": data.id, 
+			  "official_email": data.official_email
+			};  
+	bootbox.confirm({
+		message: "Are You Sure ?",
+		size: 'small',
+		buttons: {
+			confirm: {
+				label: 'Yes',
+				className: 'btn-success btn-cus'
+			},
+			cancel: {
+				label: 'No',
+				className: 'btn-danger btn-cus'
+			}
+		},
+		callback: function (result) {
+			var delete_member_info = {
+					  "type": "delete_member_info",
+					  "id": data.id, 
+					  "official_email": data.official_email
+					};  
+			result && new UtilWidget()
+			.http(delete_member_info)  
+			.then(message=> {
+	               console.log(message); 
+	               message.tag =="Success"?loadMemberData():""
+				}).catch(d=>console.log(d))
+		}
+	});
+			
+}
+ 

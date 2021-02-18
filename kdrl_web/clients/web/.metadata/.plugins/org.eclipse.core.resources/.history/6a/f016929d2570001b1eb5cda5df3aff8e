@@ -1,0 +1,126 @@
+       <!-- Masthead-->
+        <header class="masthead bg-primary text-white text-center">
+            <div class="container d-flex align-items-center flex-column">
+                <!-- Masthead Avatar Image-->
+                <img class="masthead-avatar mb-5" src="assets/img/kdrl.png" alt="" />
+                <!-- Masthead Heading-->
+                <h2 class="masthead-heading text-uppercase mb-0">King Digital Recharge Limited.</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom divider-light">
+                    <div class="divider-custom-line"></div>
+                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                    <div class="divider-custom-line"></div>
+                </div>
+                <!-- Masthead Subheading-->
+                <p class="masthead-subheading font-weight-light mb-0">We Think & Work Digitally</p>
+            </div>
+        </header>
+            <!-- Application-->
+    <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+                <div class="wrapper wrapper--w790">
+                    <div class="card card-5">
+                    
+                    <!--------------- logo ---------------------> 
+                        <div class="row center">
+                     <div class="col-12">
+                          <div class="card-heading">
+                            <h2 class="title">Salary Report</h2>
+                        </div>
+                     </div>
+                </div>
+                        <div class="card-body">
+                            <form id="salaryReportForm"  class="form-horizontal">
+                                <div class="form-row m-b-55">
+                                
+                                <!---------------  Employee Name --------------------->
+                                    <div class="col-lg-12">
+                                		<div class="input-group input-group-sm pt-1">
+                                    		<div class="input-group-prepend">
+                                        		<span class="input-group-text"> Employee Name</span>
+                                    		</div>
+                                        <input name="employee_name" id="employee_name" type="text" class="form-control" placeholder="Text.." >
+                                		</div>
+                          			</div>
+                              
+                              <!---------------  Employee Email --------------------->  
+                                <div class="col-lg-12">
+                                		<div class="input-group input-group-sm pt-1">
+                                    		<div class="input-group-prepend">
+                                        		<span class="input-group-text"> Employee Email</span>
+                                    		</div>
+                                        <input name="employee_email" id="employee_email" type="text" class="form-control" placeholder="example@email.com" >
+                                		</div>
+                          			</div>
+                                <!---------------  class_name --------------------->  
+                                <div class="col-lg-12">
+                                		<div class="input-group input-group-sm pt-1">
+                                    		<div class="input-group-prepend">
+                                        		<span class="input-group-text"> Class Name</span>
+                                    		</div>
+                                        <input name="class_name" id="class_name" type="text" class="form-control" placeholder="Text.." >
+                                		</div>
+                          			</div>
+                                <!---------------  salary ---------------------> 
+                                <div class="col-lg-12">
+                                		<div class="input-group input-group-sm pt-1">
+                                    		<div class="input-group-prepend">
+                                        		<span class="input-group-text"> Salary</span>
+                                    		</div>
+                                        <input name=salary id="salary" type="text" class="form-control" placeholder="" >
+                                		</div>
+                          			</div>
+                          		<!--------------- Travel Allowance --------------------->
+                          		<div class="col-lg-12">
+                                		<div class="input-group input-group-sm pt-1">
+                                    		<div class="input-group-prepend">
+                                        		<span class="input-group-text"> Travel Allowance</span>
+                                    		</div>
+                                        <input name="travel_allowance" id="travel_allowance" type="text" class="form-control" placeholder=" " >
+                                		</div>
+                          			</div>
+                          			<!--------------- medical_allowance --------------------->
+                          			<div class="col-lg-12">
+                                		<div class="input-group input-group-sm pt-1">
+                                    		<div class="input-group-prepend">
+                                        		<span class="input-group-text"> Medical Allowance</span>
+                                    		</div>
+                                        <input name="medical_allowance" id="medical_allowance" type="text" class="form-control" placeholder=" " >
+                                		</div>
+                          			</div>
+                          			<!--------------- overtime_allowance --------------------->
+                          			<div class="col-lg-12">
+                                		<div class="input-group input-group-sm pt-1">
+                                    		<div class="input-group-prepend">
+                                        		<span class="input-group-text"> Overtime Allowance</span>
+                                    		</div>
+                                        <input name="overtime_allowance" id="overtime_allowance" type="text" class="form-control" placeholder=" " >
+                                		</div>
+                          			</div>
+                          			<!--------------- Month --------------------->
+                          			<div class="col-lg-12">
+                                		<div class="input-group input-group-sm pt-1">
+                                    		<div class="input-group-prepend">
+                                        		<span class="input-group-text"> Month</span>
+                                    		</div>
+                                        <input name="month" id="month" type="text" class="form-control" placeholder=" " >
+                                		</div>
+                          			</div>
+                          			<!--------------- Current Year --------------------->
+                          			<div class="col-lg-12">
+                                		<div class="input-group input-group-sm pt-1">
+                                    		<div class="input-group-prepend">
+                                        		<span class="input-group-text"> Current Year</span>
+                                    		</div>
+                                        <input name="current_year" id="current_year" type="text" class="form-control" placeholder=" " >
+                                		</div>
+                          			</div>
+                                <!---------------  Button ---------------------> 
+                                <div class="modal-footer">
+                                <button type="submit"  class="btn btn--radius-2 btn--red-2" id= "btnSubmitForm" style="background-color:#b721ff !important">Submit</button>
+                                </div>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
